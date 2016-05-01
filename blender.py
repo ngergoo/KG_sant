@@ -84,3 +84,31 @@ pd.DataFrame.to_csv(submission, 'blend_v3_1.csv', index = False, )
 #-----------------
 #Leaderboard score: 0.839493 which is not an improvement (slightly worse)
 #-----------------
+'''
+---- Submission ---- 
+    blend_v4_1.csv
+Blend together the following predictions: 
+- xgb_r_v1_FEv4_3, LB Score: 0.839968
+- xgb_v0_1FE4_1, LB Score: 0.839494
+
+
+'''
+
+#50-50% weight in facour of xgb. 
+submission_1 = pd.read_csv('Documents/DataMining/Santander/Submission/xgb_r_v1_FEv4_3.csv')
+
+submission_1.TARGET = 1-submission_1.TARGET
+
+submission_2 = pd.read_csv('Documents/DataMining/Santander/Submission/xgb_v0_1FE4_1.csv')
+
+submission = pd.read_csv("Documents/DataMining/Santander/CleanData/sample_submission.csv")
+
+submission.TARGET = (submission_1.TARGET + submission_2.TARGET)/2
+pd.DataFrame.to_csv(submission, 'blend_v4_1.csv', index = False, )
+
+#-----------------
+#Leaderboard score: 0.839822 which is not an improvement (slightly worse)
+#-----------------
+
+
+

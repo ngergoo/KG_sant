@@ -343,7 +343,6 @@ pd.DataFrame.to_csv(submission, 'xgb_v0_1FE4_1.csv', index = False, )
 
 #-----------------
 #Leaderboard score: Tiny improvement: 0.839494 by 0.000087
-#For now, this is the best solution
 #-----------------
 
 train = pd.read_csv("Documents/DataMining/Santander/Data/train_FE_v4_1.csv")
@@ -444,4 +443,10 @@ pd.DataFrame.to_csv(submission, 'xgb_v0_1FE4_3.csv', index = False, )
 #-----------------
 #Leaderboard score: 0.838696, which is not an improvement... 
 #-----------------
+
+#This version is the xgb lalala script from kaggle: 
+#Unfortunately it uses R, so i need to run it there
+
+#https://www.kaggle.com/mindcool/santander-customer-satisfaction/xgb-lalala/run/199465/code
+
 
